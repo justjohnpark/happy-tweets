@@ -12,18 +12,18 @@
       cb.setToken(accessToken, accessSecret);
       cb.setBearerToken(bearerToken);
 
-      var params = { "q": "happy" };
+      var params = { q: "happy" };
       cb.__call(
-          // "search_tweets",
-          // params,
-          "statuses_homeTimeline",
-          {},
+          "search_tweets",
+          params,
+          // "statuses_homeTimeline",
+          // {},
           function (reply) {
             console.log(reply);
           }
-          // true // this parameter required
       );
     }
+    
 
     return factory;
   }
