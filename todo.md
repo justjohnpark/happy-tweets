@@ -1,10 +1,12 @@
+Get Tweets (Async)
+Skip Evaluating Tweets for Car Version
+Extract Text, User Location
+Use D3 to Map It
+
+Implement a Timer
+
+
 Check out $q
-
-Use D3 to Map 
-
-Configure code so that you can hit the Sentiment Analysis API
-
-A timer to fetch tweets
 
 Make sure the text only shows up when the car is going less than 5mph
 

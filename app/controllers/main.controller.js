@@ -13,13 +13,3 @@
 
   }
 })();
-
-/* 
-Get Tweets (Async)
-Evaluate Tweets
-
-artificial change
-
-
-Tweet, User Location, Happiness Index
-*/ 
