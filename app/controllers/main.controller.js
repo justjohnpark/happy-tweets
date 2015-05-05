@@ -6,6 +6,20 @@
   function mainController(TwitterFactory) {
     vm = this;
     
-    TwitterFactory.getTweets();
+    TwitterFactory.getTweets().then(function() {
+      TwitterFactory.analyzeTweets()
+
+    });
+
   }
 })();
+
+/* 
+Get Tweets (Async)
+Evaluate Tweets
+
+
+
+
+Tweet, User Location, Happiness Index
+*/ 
