@@ -3,13 +3,12 @@
     .module('happy-tweets')
     .controller('mainController', mainController);
 
-  function mainController(TwitterFactory) {
+  function mainController(TwitterFactory, MapFactory) {
     vm = this;
     
-    TwitterFactory.getTweets().then(function() {
-      TwitterFactory.analyzeTweets()
+    TwitterFactory.getTweets();
 
-    });
+    // vm.map = MapFactory.getStaticMap();
 
   }
 })();

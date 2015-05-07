@@ -1,7 +1,12 @@
 Get Tweets (Async)
 Skip Evaluating Tweets for Car Version
 Extract Text, User Location
-Use D3 to Map It
+
+GET NG-MAPS WORKING AND DELETE TESTAPP (AND OTHER UNNECESSARY STUFF)
+
+DL ANGULAR AND UI ROUTER INSTEAD OF LINKS
+
+DELETE MAP FACTORY AND SCRIPT ON INDEX.HTML
 
 Implement a Timer
 
@@ -24,4 +29,15 @@ resources:
 - https://dev.twitter.com/rest/tools/console
 - https://dev.twitter.com/rest/reference/get/statuses/lookup
 - http://preloaders.net/
--
+- http://www.toptal.com/javascript/a-map-to-perfection-using-d3-js-to-make-beautiful-web-maps
+- http://bost.ocks.org/mike/leaflet/#init
+- http://www.ng-newsletter.com/posts/d3-on-angular.html
+- http://alexandros.resin.io/angular-d3-svg/
+- https://detroitlabs.slack.com/files/dcase/F04KH25ER/gamma-ihu-seed.zip
+- leaflet
+- mapbox
+
+
+https://www.mapbox.com/developers/api/static/
+http://webdesign.tutsplus.com/tutorials/getting-creative-with-the-google-maps-api--webdesign-13380
+http://24ways.org/2010/finding-your-way-with-static-maps/
