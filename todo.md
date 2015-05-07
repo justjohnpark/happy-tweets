@@ -1,7 +1,5 @@
 Check out $q
 
-Use D3 to Map 
-
 Configure code so that you can hit the Sentiment Analysis API
 
 A timer to fetch tweets
