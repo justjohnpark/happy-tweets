@@ -10,8 +10,8 @@
     factory.getTweets = function() {
       var cb = new Codebird;
       cb.setConsumerKey(consumerKey, consumerSecret);
-      cb.setToken(accessToken, accessSecret);
-      cb.setBearerToken(bearerToken);
+      // cb.setToken(accessToken, accessSecret);
+      // cb.setBearerToken(bearerToken);
       var deferred = $q.defer();
 
       var params = { q: "happy", geocode: "42.3314,-83.0458,24901mi", count: 100 };
@@ -28,7 +28,7 @@
     }
 
     factory.analyzeTweets = function() {
-      console.log(factory.tweets);
+      // console.log(factory.tweets);
     }
 
     return factory;
