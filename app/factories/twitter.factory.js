@@ -6,6 +6,7 @@
   function TwitterFactory(consumerKey, consumerSecret, accessToken, accessSecret, bearerToken, $q) {
     var factory = {};
     factory.tweets = {};
+    factory.processed = {};
       
     factory.getTweets = function() {
       var cb = new Codebird;
@@ -14,7 +15,7 @@
       // cb.setBearerToken(bearerToken);
       var deferred = $q.defer();
 
-      var params = { q: "happy", geocode: "42.3314,-83.0458,24901mi", count: 100 };
+      var params = { q: "happy", geocode: "40.047506,-98.477500,1000mi", count: 100 };
       cb.__call(
           "search_tweets",
           params,
@@ -28,7 +29,17 @@
     }
 
     factory.splitTweets = function() {
-      console.log(factory.tweets);
+      var tweetsLength = factory.tweets.length;
+      var tweetsCoordinate;
+      for (var i=0; i<tweetsLength; i++) {
+        if (factory.tweets[i]["geo"] !== null) {
+          var first = Math.floor(factory.tweets[i]["geo"]["coordinates"][0] * 10000) / 10000;
+          var second =  Math.floor(factory.tweets[i]["geo"]["coordinates"][1] * 10000) / 10000;
+          tweetsCoordinate = first + ", " + second;
+          factory.processed[tweetsCoordinate] = factory.tweets[i]["text"];
+        }
+      }
+      console.log(factory.processed);
     }
 
     return factory;
