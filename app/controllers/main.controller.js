@@ -8,7 +8,7 @@
     
     TwitterFactory.getTweets();
 
-    // vm.map = MapFactory.getStaticMap();
+    vm.map = MapFactory.getStaticMap();
 
   }
 })();
