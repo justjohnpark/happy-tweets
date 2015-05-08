@@ -27,8 +27,8 @@
       return deferred.promise;
     }
 
-    factory.analyzeTweets = function() {
-      // console.log(factory.tweets);
+    factory.splitTweets = function() {
+      console.log(factory.tweets);
     }
 
     return factory;

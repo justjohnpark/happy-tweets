@@ -1,15 +1,8 @@
-Get Tweets (Async)
-Skip Evaluating Tweets for Car Version
 Extract Text, User Location
-
-GET NG-MAPS WORKING AND DELETE TESTAPP (AND OTHER UNNECESSARY STUFF)
 
 DL ANGULAR AND UI ROUTER INSTEAD OF LINKS
 
-DELETE MAP FACTORY AND SCRIPT ON INDEX.HTML
-
 Implement a Timer
-
 
 Check out $q
 
@@ -42,4 +35,4 @@ https://www.mapbox.com/developers/api/static/
 http://webdesign.tutsplus.com/tutorials/getting-creative-with-the-google-maps-api--webdesign-13380
 http://24ways.org/2010/finding-your-way-with-static-maps/
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+https://snazzymaps.com/style/14/vintage
