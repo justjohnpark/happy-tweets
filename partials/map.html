@@ -1,10 +1,10 @@
 <p>Angular: {{2+2}}</p>
+<!-- <div id="map-canvas"></div> -->
 <!-- <img class="map" ng-src="{{vmMain.map}}"> -->
-<map center="40.047506, -98.477500" zoom="3" styles="[{stylers:[{visibility:'off'}]},{featureType:'water',stylers:[{visibility:'on'},{color:'#08304b'}]},{featureType:'landscape',stylers:[{visibility:'on'},{color:'#000000'}]},{featureType:'administrative',elementType:'geometry.stroke',stylers:[{visibility:'on'},{color:'#08304b'},{weight:1}]}]" disable-default-u-i="true">
-  <!-- ngRepeat: beach in beaches -->
-  <div ng-repeat="coordinate in vmMain.coordinates">
-    <marker position="{{coordinate}}" icon="../images/smile.png" animation="DROP"></marker>
-  </div>
+<map id="map" center="40.047506, -98.477500" zoom="3" styles="[{stylers:[{visibility:'off'}]},{featureType:'water',stylers:[{visibility:'on'},{color:'#08304b'}]},{featureType:'landscape',stylers:[{visibility:'on'},{color:'#000000'}]},{featureType:'administrative',elementType:'geometry.stroke',stylers:[{visibility:'on'},{color:'#08304b'},{weight:1}]}]" disable-default-u-i="true">
+  <!-- <div ng-repeat="coordinate in vmMain.coordinates"> -->
+    <!-- <marker position="{{coordinate}}" icon="../images/smile.png" animation="DROP"></marker> -->
+  <!-- </div> -->
 </map>
 
 

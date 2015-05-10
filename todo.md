@@ -8,7 +8,7 @@ Check out $q
 
 Make sure the text only shows up when the car is going less than 5mph
 
-Delete unnecessary happy face images
+Delete bower_componenets in test folder
 ---------
 backlog:
 
@@ -36,3 +36,8 @@ http://webdesign.tutsplus.com/tutorials/getting-creative-with-the-google-maps-ap
 http://24ways.org/2010/finding-your-way-with-static-maps/
 
 https://snazzymaps.com/style/14/vintage
+
+- https://developers.google.com/maps/documentation/staticmaps/#Latlons
+- https://developers.google.com/maps/tutorials/customizing/custom-markers
+- https://developers.google.com/maps/tutorials/customizing/styling-the-base-map
+- https://developers.google.com/maps/documentation/javascript/examples/icon-complex

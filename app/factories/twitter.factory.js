@@ -35,7 +35,7 @@
         if (factory.tweets[i]["geo"] !== null) {
           var first = Math.floor(factory.tweets[i]["geo"]["coordinates"][0] * 10000) / 10000;
           var second =  Math.floor(factory.tweets[i]["geo"]["coordinates"][1] * 10000) / 10000;
-          tweetsCoordinate = first + ", " + second;
+          tweetsCoordinate = first + "," + second;
           factory.processed[tweetsCoordinate] = factory.tweets[i]["text"];
         }
       }
