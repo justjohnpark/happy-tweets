@@ -8,6 +8,11 @@
     vm.coordinates = [];
     vm.extractCoordinates = extractCoordinates;
     vm.addMarker = addMarker;
+    vm.map;
+
+    $scope.$on('mapInitialized', function(event, evtMap) {
+      vm.map = evtMap;  
+    }, 1000);
 
     TwitterFactory.getTweets().then(function() {
       TwitterFactory.splitTweets();
@@ -27,24 +32,18 @@
 
     var iterator = 0;  
     function addMarker() {
-      // console.log($scope.map);
-      $scope.$on('mapInitialized', function(event, args) {
-        var map = args[0];
-        console.log(map);
-      }, 1000);
+      // console.log(vm.map);
 
-      if ($scope.map !== undefined) {
+      if (vm.map !== undefined) {
         console.log("yo");
 
         for (var i=0; i<vm.coordinates.length; i++) {
-
-          //TRY TO PUT ALL THIS CODE IN HTML HEAD AND LOAD THE SCRIPTS IN THE HEAD AS WELL. EXACTLY LIKE MARKER-ANIMATIONS-ITERATIONS
 
           $timeout(function() {
             // add a marker this way does not sync. marker with <marker> tag
             new google.maps.Marker({
               position: vm.coordinates[iterator++],
-              map: $scope.map,
+              map: vm.map,
               draggable: false,
               animation: google.maps.Animation.DROP
             });
@@ -61,12 +60,6 @@
 
   }
 })();
-
-//setInterval
-
-//other languages
-
-//remove icons
 
 
 
