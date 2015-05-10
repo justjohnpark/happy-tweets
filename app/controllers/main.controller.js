@@ -6,74 +6,14 @@
   function mainController($scope, $timeout, TwitterFactory) {
     vm = this;
     vm.coordinates = [];
-    // vm.initialize = initialize;
     vm.extractCoordinates = extractCoordinates;
     vm.addMarker = addMarker;
-
-    // $timeout(function(){
-    //   vm.initialize(); 
-    // });
 
     TwitterFactory.getTweets().then(function() {
       TwitterFactory.splitTweets();
       vm.extractCoordinates();
       vm.addMarker();
     });
-
-    // function initialize() {
-    //   console.log("I MADE IT");
-    //   var featureOpts = [
-    //       {
-    //           stylers: [
-    //               { visibility: "off" }
-    //           ]
-    //       },
-    //       {
-    //           featureType: "water",
-    //           stylers: [
-    //               { visibility: "on" },
-    //               { color: "#08304b" }
-    //           ]
-    //       },
-    //       {
-    //           featureType: "landscape",
-    //           stylers: [
-    //               { visibility: "on" },
-    //               { color: "#000000" }
-    //           ]
-    //       },
-    //       {
-    //           featureType: "administrative",
-    //           elementType: "geometry.stroke",
-    //           stylers: [
-    //               { visibility: "on" },
-    //               { color: "#08304b" },
-    //               { weight: 1 }
-    //           ]
-    //       }
-    //   ];
-
-    //   var mapOptions = {
-    //     zoom: 3,
-    //     center: new google.maps.LatLng(40.047506, -98.477500),
-    //     mapTypeControlOptions: {
-    //       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'custom_style']
-    //     },
-    //     mapTypeId: 'custom_style'
-    //   };
-
-      
-
-    //   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-
-    //   var styledMapOptions = {
-    //     name: 'Custom Style'
-    //   };
-
-    //   var customMapType = new google.maps.StyledMapType(featureOpts, styledMapOptions);
-
-    //   map.mapTypes.set('custom_style', customMapType);
-    // }
 
     function extractCoordinates() {
       for (coordinates in TwitterFactory.processed) {
