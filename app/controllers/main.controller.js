@@ -32,8 +32,6 @@
 
     var iterator = 0;  
     function addMarker() {
-      // console.log(vm.map);
-
       if (vm.map !== undefined) {
         console.log("yo");
 
@@ -44,6 +42,7 @@
             new google.maps.Marker({
               position: vm.coordinates[iterator++],
               map: vm.map,
+              icon: "../images/smile.png",
               draggable: false,
               animation: google.maps.Animation.DROP
             });
