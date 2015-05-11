@@ -3,7 +3,7 @@
     .module('happy-tweets')
     .factory('TwitterFactory', TwitterFactory);
 
-  function TwitterFactory(consumerKey, consumerSecret, accessToken, accessSecret, bearerToken, $q) {
+  function TwitterFactory(consumerKey, consumerSecret, $q) {
     var factory = {};
     factory.tweets = {};
     factory.processed = {};
@@ -11,11 +11,9 @@
     factory.getTweets = function() {
       var cb = new Codebird;
       cb.setConsumerKey(consumerKey, consumerSecret);
-      // cb.setToken(accessToken, accessSecret);
-      // cb.setBearerToken(bearerToken);
       var deferred = $q.defer();
 
-      var params = { q: "happy", geocode: "40.047506,-98.477500,1000mi", count: 100 };
+      var params = { q: "happy", geocode: "40.047506,-98.477500,1000mi", count: 15 };
       cb.__call(
           "search_tweets",
           params,
