@@ -18,16 +18,19 @@
 
     vm.initiate(0);
 
-    function initiate(set) {      
-      TwitterFactory.getTweets().then(function() {
-        TwitterFactory.splitTweets();
+    function initiate(set) {   
+      console.log("--");   
+      console.log(set);   
+      console.log("--");   
+      TwitterFactory.getTweets(set).then(function() {
+        TwitterFactory.splitTweets(set);
         vm.extractCoordinates(set);
         vm.addMarker(set);
       });
     }
 
     function extractCoordinates(set) {
-      for (coordinates in TwitterFactory.processed) {
+      for (coordinates in TwitterFactory.processed[set]) {
         var first = Number(coordinates.split(',')[0]);
         var second = Number(coordinates.split(',')[1]);
         vm.coordinates[set].push(new google.maps.LatLng(first, second));
