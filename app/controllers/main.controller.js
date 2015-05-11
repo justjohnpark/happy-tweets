@@ -32,21 +32,21 @@
         var second = Number(coordinates.split(',')[1]);
         vm.coordinates[set].push(new google.maps.LatLng(first, second));
       }
-      console.log(vm.coordinates);
+      console.log(vm.coordinates[set]);
     }
 
-    var iterator = 0;  
-    var counter = 0;
+    var iterator = [[0],[0]];  
+    var counter = [[0],[0]];
 
     function addMarker(set) {
-      iterator = 0;
-      counter = 0;
+      iterator[set] = 0;
+      counter[set] = 0;
       if (vm.map !== undefined) {
         for (var i=0; i<vm.coordinates[set].length; i++) {
           $timeout(function() {
             // add a marker this way does not sync. marker with <marker> tag
             var marker = new google.maps.Marker({
-              position: vm.coordinates[set][iterator++],
+              position: vm.coordinates[set][iterator[set]++],
               map: vm.map,
               icon: "../images/smile.png",
               draggable: false,
@@ -63,17 +63,16 @@
       $timeout(function() {
         for (var j=0; j<vm.coordinates[set].length; j++) {
           $timeout(function() {
-            if (counter === (vm.coordinates[set].length-1)) {
-              vm.markers[set][counter].setMap(null);
+            if (counter[set] === (vm.coordinates[set].length-1)) {
+              vm.markers[set][counter[set]].setMap(null);
               vm.coordinates[set] = [];
               vm.markers[set] = [];
-              if (set === 0) {
-                vm.initiate(1);                
-              } else {
-                vm.initiate(0);
-              }
+            } else if (counter[set] === (vm.coordinates[set].length-5)) {
+              vm.markers[set][counter[set]++].setMap(null); 
+              if (set === 0) { vm.initiate(1); } 
+              else { vm.initiate(0); }
             } else {
-              vm.markers[set][counter++].setMap(null); 
+              vm.markers[set][counter[set]++].setMap(null); 
             }
           }, j * 2000);
         }
