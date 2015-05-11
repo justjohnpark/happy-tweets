@@ -34,6 +34,7 @@
     }
 
     var iterator = 0;  
+    var counter = 0;
     function addMarker() {
       if (vm.map !== undefined) {
         for (var i=0; i<vm.coordinates.length; i++) {
@@ -56,19 +57,15 @@
         }), 500);
       }
       $timeout(function() {
+        // console.log(vm.markers);
         for (var j=0; j<vm.markers.length; j++) {
-          // $timeout(function() {
-            vm.markers[j].setMap(null);
-          // }, j * 2000);
+          $timeout(function() {
+            vm.markers[counter++].setMap(null);
+          }, j * 2000);
         }
+        // console.log(vm.markers);
       }, vm.coordinates.length * 2000);
     }
-
-    // function emptyTheNest() {
-    //   vm.coordinates = [];
-    //   console.log("Nest Emptied!");
-    // }
-
   }
 })();
 
