@@ -32,6 +32,7 @@
     }
 
     function extractCoordinates(set) {
+      vm.coordinates[set] = [];
       for (coordinates in TwitterFactory.processed[set]) {
         var first = Number(coordinates.split(',')[0]);
         var second = Number(coordinates.split(',')[1]);
@@ -46,12 +47,14 @@
     var counter = [[0],[0]];
 
     function addMarker(set) {
+      vm.markers[set] = [];
       vm.output = "";
       iterator[set] = 0;
       counter[set] = 0;
       if (vm.map !== undefined) {
         for (var i=0; i<vm.coordinates[set].length; i++) {
           $timeout(function() {
+            vm.output = vm.tweetText[set][iterator[set]];
             var marker = new google.maps.Marker({
               position: vm.coordinates[set][iterator[set]++],
               map: vm.map,
@@ -60,7 +63,6 @@
               animation: google.maps.Animation.DROP
             });
             vm.markers[set].push(marker);
-            vm.output = vm.tweetText[set][iterator[set]];
           }, i * 2000);
         }
       } else {
@@ -73,9 +75,7 @@
           $timeout(function() {
             if (counter[set] === (vm.coordinates[set].length-1)) {
               vm.markers[set][counter[set]].setMap(null);
-              vm.coordinates[set] = [];
-              vm.markers[set] = [];
-            } else if (counter[set] === (vm.coordinates[set].length-5)) {
+            } else if (counter[set] === (vm.coordinates[set].length-7)) {
               vm.markers[set][counter[set]++].setMap(null); 
               if (set === 0) { vm.initiate(1); } 
               else { vm.initiate(0); }
@@ -84,7 +84,7 @@
             }
           }, j * 2000);
         }
-      }, 8000);
+      }, 12000);
     }
   }
 })();
