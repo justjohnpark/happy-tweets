@@ -75,7 +75,7 @@
           $timeout(function() {
             if (counter[set] === (vm.coordinates[set].length-1)) {
               vm.markers[set][counter[set]].setMap(null);
-            } else if (counter[set] === (vm.coordinates[set].length-7)) {
+            } else if (counter[set] === (vm.coordinates[set].length-13)) {
               vm.markers[set][counter[set]++].setMap(null); 
               if (set === 0) { vm.initiate(1); } 
               else { vm.initiate(0); }
@@ -84,7 +84,7 @@
             }
           }, j * 2000);
         }
-      }, 12000);
+      }, 24000);
     }
   }
 })();

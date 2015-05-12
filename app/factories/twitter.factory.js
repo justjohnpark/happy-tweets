@@ -16,11 +16,11 @@
       var deferred = $q.defer();
 
       if (factory.firstTime === true) {
-        var params = { q: "happy", geocode: "40.047506,-98.477500,1000mi", count: 15 };
+        var params = { q: "happy", geocode: "40.047506,-98.477500,2000mi", count: 30 };
         console.log("TWITTER HIT WITHOUT MAX_ID");
         factory.firstTime = false;
       } else {
-        var params = { q: "happy", geocode: "40.047506,-98.477500,1000mi", count: 15, max_id: factory.lastTweet };
+        var params = { q: "happy", geocode: "40.047506,-98.477500,2000mi", count: 30, max_id: factory.lastTweet };
         console.log("TWITTER HIT WITH MAX_ID");
       }
       cb.__call(
