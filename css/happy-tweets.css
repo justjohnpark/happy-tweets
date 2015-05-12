@@ -9,3 +9,8 @@
 .tweet {
   text-align: center;
 }
+
+.text-container {
+  border: solid 5px #F1F16A;
+  height: 70px;
+}

@@ -33,3 +33,7 @@ https://snazzymaps.com/style/14/vintage
 --one of the big issues--
 https://github.com/allenhwkim/angularjs-google-maps/issues/33
 https://github.com/allenhwkim/angularjs-google-maps/blob/master/testapp/marker_with_parent_controller.html
+
+
+
+
