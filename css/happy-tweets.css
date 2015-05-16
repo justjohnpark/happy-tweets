@@ -4,5 +4,15 @@
   width: 800px;
   height: 380px;
   border: solid 1px;
+}
 
+.tweet {
+  text-align: center;
+  color: yellow;
+}
+
+.text-container {
+  border: solid 5px #F1F16A;
+  height: 70px;
+  background-color: #000000;
 }
