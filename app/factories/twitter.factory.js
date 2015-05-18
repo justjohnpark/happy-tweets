@@ -40,7 +40,7 @@
       var tweetsCoordinate;
       factory.processed[set] = {};
       for (var i=0; i<tweetsLength; i++) {
-        if (factory.tweets[set][i]["geo"] !== null) {
+        if (factory.tweets[set][i]["geo"] !== null && checkForProfanity(factory.tweets[set][i]["text"])) {
           var first = Math.floor(factory.tweets[set][i]["geo"]["coordinates"][0] * 10000) / 10000;
           var second =  Math.floor(factory.tweets[set][i]["geo"]["coordinates"][1] * 10000) / 10000;
           tweetsCoordinate = first + "," + second;
@@ -48,10 +48,20 @@
         }
         if (i === (tweetsLength - 1)) {
           factory.lastTweet = factory.tweets[set][i]["id"];
-          console.log(factory.lastTweet);
+          // console.log(factory.lastTweet);
         }
       }
       console.log(factory.processed[set]);
+    }
+
+    function checkForProfanity(tweet) {
+      var split = tweet.toLowerCase().split(" ");
+      for (var i=0; i<split.length; i++) {
+        if (split[i] === "shit" || split[i] === "fuck" || split[i] === "damn" || split[i] === "bitch" || split[i] === "crap" || split[i] === "dick" || split[i] === "cock" || split[i] === "pussy" || split[i] === "asshole" || split[i] === "fag" || split[i] === "slut" || split[i] === "dick" || split[i] === "piss" || split[i] === "whore" || split[i] === "ass" || split[i] === "retard" || split[i] === "cunt" || split[i] === "tit") {
+          return false;
+        }
+      }
+      return true;
     }
 
     return factory;
